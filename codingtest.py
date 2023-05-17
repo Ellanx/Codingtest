@@ -1,62 +1,180 @@
-# 1번째
+# # 1번째 문제  https://school.programmers.co.kr/learn/courses/30/lessons/181952
+str = input()
 
-# 10 ~ 15 까지의 각 숫자의 개수를 구해보자
-# 와.. 어찌 이렇게 짜지.. 대단하다..
-import math
-from collections import defaultdict
-count = {x: 0 for x in range(0, 10)}
-
-for x in range(1, 1001):
-    for i in str(x):
-        count[int(i)] += 1
-
-print(count)
-
-# 2번째
-
-d = defaultdict(int)
-for n in range(1, 1001):
-    for x in str(n):
-        d[x] += 1
+print(str)
 
 
-# 주어진 문자열(공백 없이 쉼표로 구분되어 있음)을 가지고 아래 문제에 대한 프로그램을 작성하세요.
+# 2번째 문제 https://school.programmers.co.kr/learn/courses/30/lessons/181944
 
-# 이유덕,이재영,권종표,이재영,박민호,강상희,이재영,김지완,최승혁,이성연,박영서,박민호,전경헌,송정환,김재성,이유덕,전경헌
+a = int(input())
 
-names = "이유덕,이재영,권종표,이재영,박민호,강상희,이재영,김지완,최승혁,이성연,박영서,박민호,전경헌,송정환,김재성,이유덕,전경헌".split(
-    ",")
-
-# 1
-a = [i[0] for i in names]
-print("김씨 : %d\n이씨 : %d\n" % (a.count("김"), a.count("이")))
-
-# 2
-print(names.count("이재영"))
-
-# 3
-uniq_names = list(set(names))
-print(uniq_names)
-
-# 4
-uniq_names.sort()
-print(uniq_names)
+if a % 2 == 0:
+    print(f'{a} is even')
+else:
+print(f'{a} is odd')
 
 
-# A씨는 게시물의 총 건수와 한 페이지에 보여줄 게시물수를 입력으로 주었을 때 총 페이지수를 리턴하는 프로그램이 필요하다고 한다.
+# 문제 3 https://school.programmers.co.kr/learn/courses/30/lessons/181937
 
-입력: 총건수(m), 한페이지에 보여줄 게시물수(n)(단 n은 1보다 크거나 같다. n >= 1)
-출력: 총페이지수
-
-
-m = int(input('총건수: '))
-n = int(input('한페이지에 보여줄 게시물수: '))
-
-print(math.ceil(m/n))
+def solution(num, n):
+    if num % n == 0:
+        return 1
+    else:
+        return 0
 
 
-def page(m, n):
-    page = m // n
-    if m % n > 0:
-        page += 1
-    return page
+print(solution(33, 3))
+
+
+# 문제 4 https://school.programmers.co.kr/learn/courses/30/lessons/181941
+
+def solution(arr):
+    return ''.join(arr)
+
+# 문제 5 https://school.programmers.co.kr/learn/courses/30/lessons/181848
+
+
+def solution(n_str):
+    return int(n_str)
+
+# 문제 6 https://school.programmers.co.kr/learn/courses/30/lessons/181936
+
+
+def solution(number, n, m):
+    if number % n == 0 and number % m == 0:
+        return 1
+    else:
+        return 0
+
+# 문제 7 https://school.programmers.co.kr/learn/courses/30/lessons/181840?language=python3
+
+
+def solution(num_list, n):
+    if n in num_list:
+        return 1
+    else:
+        return 0
+
+
+# 문제 8 https://school.programmers.co.kr/learn/courses/30/lessons/181876?language=python3
+
+def solution(myString):
+    return myString.lower()
+
+# 문제 9 https://school.programmers.co.kr/learn/courses/30/lessons/181877
+
+
+def solution(myString):
+    return myString.upper()
+
+
+# 문제 10  https://school.programmers.co.kr/learn/courses/30/lessons/181929
+
+def solution(num_list):
+    list_sum = 0
+    total = 1
+    for i in num_list:
+        list_sum += i
+        total *= i
+    if total < list_sum ** 2:
+        return 1
+    else:
+        return 0
+
+# 문제 11 https://school.programmers.co.kr/learn/courses/30/lessons/181850
+
+
+def solution(flo):
+    return int(flo)
+
+# 문제 12 https://school.programmers.co.kr/learn/courses/30/lessons/181845
+
+
+def solution(n):
+    return str(n)
+
+# 문제 13 https://school.programmers.co.kr/learn/courses/30/lessons/181933
+# flag의 Ture , Flase는 따로 정해주는거
+
+
+def solution(a, b, flag):
+    if flag:
+        return a + b
+    else:
+        return a - b
+
+# 문제 14 https://school.programmers.co.kr/learn/courses/30/lessons/181879
+
+
+def solution(num_list):
+    total = 1
+    if len(num_list) >= 11:
+        return sum(num_list)
+    else:
+        for i in num_list:
+            total *= i
+        return total
+
+# 문제 15 https://school.programmers.co.kr/learn/courses/30/lessons/181835
+# 너무 시간 잡아 먹음... 아흐 그래도 계속 고민하고 고민해서 만드는것. 리스트를 생성해야 하는 것에 대해서 생각해님
+
+
+def solution(arr, k):
+    if k % 2 == 0:
+        answer = [i + k for i in arr]
+    else:
+        answer = [i * k for i in arr]
+
+    return answer
+
+
+def solution(arr, k):
+    answer = []
+    if k % 2 != 0:
+        for i in arr:
+            answer.append(k*i)
+    else:
+        for i in arr:
+            answer.append(i+k)
+    return answer
+
+
+def solution(arr, k):
+    if k % 2 != 0:
+        return list(map(lambda x: x * k, arr))
+
+    return list(map(lambda x: x + k, arr))
+
+# 문제 16 https://school.programmers.co.kr/learn/courses/30/lessons/181940
+
+
+def solution(my_string, k):
+    return my_string * k
+
+# 문제 17 https://school.programmers.co.kr/learn/courses/30/lessons/181889
+
+
+def solution(num_list, n):
+    return num_list[:n]
+
+# 문제 18 https://school.programmers.co.kr/learn/courses/30/lessons/181910
+
+
+def solution(my_string, n):
+    return my_string[-n:]
+
+# 문제 19 https://school.programmers.co.kr/learn/courses/30/lessons/181907
+
+
+def solution(my_string, n):
+    return my_string[:n]
+
+# 문제 20 https://school.programmers.co.kr/learn/courses/30/lessons/181896
+# return 하는 것을 잘 생각해야 한다. 꼭 다시보기!
+
+
+def solution(num_list):
+    for i in num_list:
+        if i < 0:
+            return num_list.index(i)
+    return -1
