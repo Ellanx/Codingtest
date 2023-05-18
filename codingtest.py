@@ -11,7 +11,7 @@ a = int(input())
 if a % 2 == 0:
     print(f'{a} is even')
 else:
-print(f'{a} is odd')
+    print f'{a} is odd')
 
 
 # 문제 3 https://school.programmers.co.kr/learn/courses/30/lessons/181937
@@ -71,8 +71,8 @@ def solution(myString):
 # 문제 10  https://school.programmers.co.kr/learn/courses/30/lessons/181929
 
 def solution(num_list):
-    list_sum = 0
-    total = 1
+    list_sum=0
+    total=1
     for i in num_list:
         list_sum += i
         total *= i
@@ -107,7 +107,7 @@ def solution(a, b, flag):
 
 
 def solution(num_list):
-    total = 1
+    total=1
     if len(num_list) >= 11:
         return sum(num_list)
     else:
@@ -121,15 +121,15 @@ def solution(num_list):
 
 def solution(arr, k):
     if k % 2 == 0:
-        answer = [i + k for i in arr]
+        answer=[i + k for i in arr]
     else:
-        answer = [i * k for i in arr]
+        answer=[i * k for i in arr]
 
     return answer
 
 
 def solution(arr, k):
-    answer = []
+    answer=[]
     if k % 2 != 0:
         for i in arr:
             answer.append(k*i)
@@ -178,3 +178,81 @@ def solution(num_list):
         if i < 0:
             return num_list.index(i)
     return -1
+
+
+# 문제 21 https://school.programmers.co.kr/learn/courses/30/lessons/181849
+# 한번더 생각해보기 '123455' 이걸 리스트로 만들면 '1','2','3' 이런씩으로 된다는걸 왜 까먹었을까.. 사소한건데 ㅠ
+def solution(num_str):
+    return sum(int(n) for n in num_str)
+
+
+def solution(num_str):
+    return sum(map(int, list(num_str)))
+
+
+def solution(num_str):
+    answer=0
+    for i in num_str:
+        answer += int(i)
+    return answer
+
+# 문제 22 https://school.programmers.co.kr/learn/courses/30/lessons/181853
+
+
+def solution(num_list):
+    return sorted(num_list)[:5]
+
+
+# 문제 23 https://school.programmers.co.kr/learn/courses/30/lessons/181951
+# 다시한번 확인하기
+a, b=map(int, input().split())
+print("a =", a)
+print("b =", b)
+
+# 문제 24 https://school.programmers.co.kr/learn/courses/30/lessons/181843
+
+
+def solution(my_string, target):
+    if target in my_string:
+        return 1
+    else:
+        return 0
+
+# 문제 25 https://school.programmers.co.kr/learn/courses/30/lessons/181839
+
+
+def solution(a, b):
+    if a % 2 == 1 and b % 2 == 1:
+        return a ** 2 + b ** 2
+    elif a % 2 == 1 or b % 2 == 1:
+        return 2 * (a + b)
+    else:
+        return abs(a - b)
+
+# 문제 26 https://school.programmers.co.kr/learn/courses/30/lessons/181863
+
+
+def solution(rny_string):
+    return rny_string.replace('m', 'rn')
+
+# 문제 27 https://school.programmers.co.kr/learn/courses/30/lessons/181930
+
+
+def solution(a, b, c):
+    if a != b and b != c and a != c:
+        return a + b + c
+    elif a == b and a != c:
+        return (a + b + c) * (a**2 + b**2 + c**2)
+    elif a == c and b != c:
+        return (a + b + c) * (a**2 + b**2 + c**2)
+    elif b == c and a != c:
+        return (a + b + c) * (a**2 + b**2 + c**2)
+    else:
+        return (a + b + c) * (a**2 + b**2 + c**2) * (a**3 + b**3 + c**3)
+
+# 문제 28 https://school.programmers.co.kr/learn/courses/30/lessons/181869
+
+
+def solution(my_string):
+    words=my_string.split()
+    return words
