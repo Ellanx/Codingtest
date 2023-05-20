@@ -256,3 +256,66 @@ def solution(a, b, c):
 def solution(my_string):
     words=my_string.split()
     return words
+
+# 문제 29 https://school.programmers.co.kr/learn/courses/30/lessons/181939
+
+
+def solution(a, b):
+
+    if int(str(a) + str(b)) >= int(str(b) + str(a)):
+        return int(str(a) + str(b))
+    else:
+        return int(str(b) + str(a))
+
+# 문제 30 https://school.programmers.co.kr/learn/courses/30/lessons/181926
+# 아예모르겠음.. control은 어찌하라는 거징..
+# 이렇게 생각하는거구나.... 가릿!
+def solution(n, control):
+    for c in control:
+        if c == 'w':
+            n += 1
+        elif c == 's':
+            n -= 1
+        elif c == 'd':
+            n += 10
+        elif c == 'a':
+            n -= 10
+
+    return n
+
+
+# 문제31 https://school.programmers.co.kr/learn/courses/30/lessons/181906
+# 아에 처음부터 확인하는 메서드가 있었구나..
+def solution(my_string, is_prefix):
+    if my_string.startswith(is_prefix):
+        return 1
+    else:
+        return 0
+
+def solution(my_string, is_prefix):
+    if my_string[:len(is_prefix)] == is_prefix:
+        return 1
+    else:
+        return 0
+
+import re
+
+text="Hello, World!"
+pattern=r"World"
+match=re.search(pattern, text)
+if match:
+    index=match.start()
+    print(index)  # 출력: 7
+
+# 문제 32 https://school.programmers.co.kr/learn/courses/30/lessons/181908
+# 기억하자 뒤에서부터는 이렇게 진행된다는걸
+def solution(my_string, is_suffix):
+    if my_string[-len(is_suffix):] == is_suffix: return 1
+    return 0
+
+# 문제 33 https://school.programmers.co.kr/learn/courses/30/lessons/181905
+# 뒤집기 잘 생각하자.
+# 문자열 my_string에서 인덱스 s부터 인덱스 e까지의 부분 문자열을 슬라이싱하여 가져옵니다. 이때, [::-1]을 사용하여 문자열을 뒤집습니다.
+def solution(my_string, s, e):
+    answer=my_string[:s] + my_string[s:e+1][::-1] + my_string[e+1:]
+    return answer
