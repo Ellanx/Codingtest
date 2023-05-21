@@ -319,3 +319,78 @@ def solution(my_string, is_suffix):
 def solution(my_string, s, e):
     answer=my_string[:s] + my_string[s:e+1][::-1] + my_string[e+1:]
     return answer
+
+def solution(my_string, s, e):
+    substr=reversed(list(my_string[s:e+1]))
+    return my_string[:s] + ''.join(substr) + my_string[e+1:]
+
+# 문제 34 https://school.programmers.co.kr/learn/courses/30/lessons/181927?language=python3
+# append를 return에 append로 해버리면 none이 나와버림.
+def solution(num_list):
+    if num_list[-1] > num_list[-2]:
+        num_list.append(num_list[-1] - num_list[-2])
+    else:
+        num_list.append(num_list[-1] * 2)
+
+    return num_list
+
+# 문제 35 https://school.programmers.co.kr/learn/courses/30/lessons/181949
+# 무진장 어려웠는데 왜 1점밖에 안주는지.. 모르겠지만.. 머... 풀었으니 만족해야지
+# input 할때 항상 기억하자..
+str=input()
+
+def solution(str):
+    result=''
+    for i in str:
+        if i.islower():
+            result += i.upper()
+        elif i.isupper():
+            result += i.lower()
+        else:
+            result += i
+    return result
+
+output_str=solution(str)
+print(output_str)
+# 미친 이렇게 푸는 것도 있었어..
+print(input().swapcase())
+# 이런풀이도.. 왜이렇게 어렵게 생각했을까~~
+str=input()
+a=''
+
+for s in str:
+    if (s.isupper()):
+        a=a + s.lower()
+    else:
+        a=a + s.upper()
+
+print(a)
+
+# 문제 36 https://school.programmers.co.kr/learn/courses/30/lessons/181948
+
+print('!@#$%^&*(\\\'\"<>?:;')
+
+# 문제 37
+https: // school.programmers.co.kr/learn/courses/30/lessons/181902
+def solution(my_string):
+    answer=[0]*52
+    for x in my_string:
+        if x.isupper():
+            answer[ord(x)-65] += 1
+        else:
+            answer[ord(x)-71] += 1
+    return answer
+# 미친 배우자. ord는 유니코드로 각 자리에 추가하는것을 말한다... 기억하자.
+
+# 문제 38 https://school.programmers.co.kr/learn/courses/30/lessons/181904
+
+def solution(my_string, m, c):
+    result=''
+    for i in range(c-1, len(my_string), m):
+        result += my_string[i]
+    return result
+# 어이가 없구만ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 이렇게 쉽게 풀리는걸.. 그래 최대한.. 쉽게 생각하는걸로 하자..
+def solution(my_string, m, c):
+    return my_string[c-1::m]
+
+# 문제 39
