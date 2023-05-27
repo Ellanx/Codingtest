@@ -370,8 +370,7 @@ print(a)
 
 print('!@#$%^&*(\\\'\"<>?:;')
 
-# 문제 37
-https: // school.programmers.co.kr/learn/courses/30/lessons/181902
+# 문제 37 https://school.programmers.co.kr/learn/courses/30/lessons/181902
 def solution(my_string):
     answer=[0]*52
     for x in my_string:
@@ -393,4 +392,131 @@ def solution(my_string, m, c):
 def solution(my_string, m, c):
     return my_string[c-1::m]
 
-# 문제 39
+# 문제 39 https://school.programmers.co.kr/learn/courses/30/lessons/181950
+
+a, n=input().strip().split(' ')
+n=int(n)
+
+result=a * n
+print(result)
+
+
+# 문제 40 https://school.programmers.co.kr/learn/courses/30/lessons/181947
+
+a, b=map(int, input().strip().split())
+
+c=a + b
+print(f"{a} + {b} = {c}")
+
+# 문제 41 https://school.programmers.co.kr/learn/courses/30/lessons/181920
+
+def solution(start, end):
+    num_list=[]
+    for num in range(start, end + 1):
+        num_list.append(num)
+    return num_list
+
+def solution(start, end):
+    return list(range(start, end + 1))
+
+# 문제 42 https://school.programmers.co.kr/learn/courses/30/lessons/181852
+
+def solution(num_list):
+    sorted_num=sorted(num_list)
+    answer=sorted_num[5:]
+    return answer
+
+def solution(num_list):
+    num_list.sort()
+    answer=num_list[5:]
+    return answer
+
+def solution(num_list):
+    return sorted(num_list)[5:]
+
+# 문제 43 https://school.programmers.co.kr/learn/courses/30/lessons/181873
+
+def solution(my_string, alp):
+    return my_string.replace(alp, alp.upper())
+
+
+def solution(my_string, alp):
+    return my_string.replace(alp, alp.swapcase())
+
+def solution(my_string, alp):
+    answer=''
+    for i in my_string:
+        if i == alp:
+            answer += i.upper()
+        else:
+            answer += i
+    return answer
+
+# 문제 44 https://school.programmers.co.kr/learn/courses/30/lessons/181874
+# 넘 어렵다.. 이런 ㅠ
+
+못품.. 다시
+
+# 문제 45 https://school.programmers.co.kr/learn/courses/30/lessons/120850
+
+def solution(my_string):
+    return sorted(map(int, filter(lambda s: s.isdigit(), my_string)))
+
+
+
+def solution(my_string):
+    return sorted([int(c) for c in my_string if c.isdigit()])
+
+def solution(my_string):
+    result=[]
+
+    for i in my_string:
+        if i.isdigit():
+            result.append(int(i))
+
+    return sorted(result)
+
+# 문제 46  https://school.programmers.co.kr/learn/courses/30/lessons/181928
+
+def solution(num_list):
+    odd_sum=""
+    even_sum=""
+
+    for num in num_list:
+        if num % 2 == 0:
+            even_sum += str(num)
+        else:
+            odd_sum += str(num)
+
+    return int(odd_sum) + int(even_sum)
+
+
+# 문제 47
+
+def solution(n):
+    if n % 2 == 1:
+        odd_sum=sum(range(1, n+1, 2))
+        return odd_sum
+    else:
+        even_sum=sum([i**2 for i in range(2, n+1, 2)])
+        return even_sum
+
+
+# 문제 48 https://school.programmers.co.kr/learn/courses/30/lessons/181942
+
+def solution(str1, str2):
+    sum_str=''
+
+    for i in range(len(str1)):
+        sum_str += str1[i] + str2[i]
+
+    return sum_str
+
+# 문제 49 https://school.programmers.co.kr/learn/courses/30/lessons/181914
+
+def solution(number):
+    number_sum=0
+    for digit in str(number):
+        number_sum += int(digit)
+    remainder=number_sum % 9
+    return remainder
