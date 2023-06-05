@@ -520,3 +520,21 @@ def solution(number):
         number_sum += int(digit)
     remainder=number_sum % 9
     return remainder
+
+
+# 문제 50 https://school.programmers.co.kr/learn/courses/30/lessons/12948
+
+def solution(phone_number):
+    return '*' * (len(phone_number) - 4) + phone_number[-4:]
+
+# 문제 51 https://school.programmers.co.kr/learn/courses/30/lessons/86051
+
+def solution(numbers):
+    return 45 - sum(numbers)
+
+def solution(numbers):
+    answer=0
+    for i in range(1,10):
+        if i not in numbers:
+            answer += i
+    return answer
