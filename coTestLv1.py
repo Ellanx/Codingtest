@@ -107,3 +107,29 @@ def solution(x):
         return True
     else:
         return False
+
+# 문제 10 https://school.programmers.co.kr/learn/courses/30/lessons/12935
+def solution(arr):
+    if len(arr) <= 1:
+        return [-1]
+
+    min_value = min(arr)
+    arr.remove(min_value)
+    return arr
+
+# 문제 11 https://school.programmers.co.kr/learn/courses/30/lessons/12930
+
+def solution(s):
+    words = s.split(" ")  # 문자열을 단어로 분리하여 리스트로 저장
+    result = []  # 변환된 단어를 저장할 리스트
+
+    for word in words:
+        converted_word = ""  # 변환된 단어를 저장할 변수
+        for i in range(len(word)):
+            if i % 2 == 0:  # 짝수번째 알파벳인 경우
+                converted_word += word[i].upper()
+            else:  # 홀수번째 알파벳인 경우
+                converted_word += word[i].lower()
+        result.append(converted_word)
+
+    return " ".join(result)
